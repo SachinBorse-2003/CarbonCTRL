@@ -25,7 +25,7 @@ const ResultScreen = ({ route }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Your Carbon Score: {score}</Text>
-      
+
       <Text style={styles.subtitle}>Recommendations:</Text>
       <FlatList
         data={recommendations}
@@ -68,18 +68,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#EEF0E5', 
+    backgroundColor: '#EEF0E5',
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#B6C4B6', 
+    color: '#B6C4B6',
     marginBottom: 20,
   },
   subtitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#99B080', 
+    color: '#99B080',
     marginTop: 10,
   },
   suggestionText: {
