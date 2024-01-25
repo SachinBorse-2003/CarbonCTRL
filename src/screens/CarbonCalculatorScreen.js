@@ -23,11 +23,9 @@ const CarbonCalculatorScreen = () => {
     setLoading(true);
     const calculatedScore = calculateScoreFromResponses(userResponses);
 
-    // Simulate storing the calculated score locally
     setScore(calculatedScore);
     setLoading(false);
 
-    // Navigate to the ResultScreen with the calculated score and recommendations
     navigation.navigate('ResultScreen', {
       score: calculatedScore,
       recommendations: getRecommendations(),
@@ -35,20 +33,18 @@ const CarbonCalculatorScreen = () => {
   };
 
   const fetchUserResponses = async () => {
-    // Simulate fetching user responses from questions
-    // Replace this with your actual logic to get user responses
     return userResponses;
   };
 
   const calculateScoreFromResponses = (responses) => {
-    // Sample logic to calculate the score based on user responses
-    // Replace this with your actual logic
     return Object.values(responses).reduce((total, response) => total + response, 0);
   };
 
   const getRecommendations = () => {
-    // Sample logic to get recommendations based on the calculated score
-    // Replace this with your actual logic
+    if (score === null) {
+      return ['Unable to provide specific recommendations.'];
+    }
+  
     const suggestions = [];
     switch (true) {
       case score <= 5:
@@ -67,7 +63,7 @@ const CarbonCalculatorScreen = () => {
     }
     return suggestions;
   };
-
+  
   const questionIcons = {
     transportation: 'car',
     appliances: 'tv',
